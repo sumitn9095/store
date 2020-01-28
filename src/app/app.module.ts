@@ -7,6 +7,7 @@ import { ProductsData } from './ProductsData';
 import { MobileProducts } from './mobile.products';
 import { ProductComponent } from './product.component';
 import { TvProducts } from './tv.products';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { TvProducts } from './tv.products';
     ProductComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    BrowserAnimationsModule
   ],
   providers: [ProductsData],
   bootstrap: [AppComponent]

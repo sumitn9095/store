@@ -3,7 +3,10 @@ import { Component, Input } from "@angular/core";
 @Component({
     selector: "product",
     template: `
-    <div class="card text-white bg-primary" (click)="thisprod(prodData, srno)">
+    <div class="card text-white bg-primary " [ngClass]="{
+        list: display,
+        card: !display
+    }" (click)="thisprod(prodData, srno)">
         <img class="card-img-top" src="holder.js/100px180/" alt="">
         <div class="card-body">
             <h5>{{ srno }}</h5>
@@ -11,11 +14,13 @@ import { Component, Input } from "@angular/core";
             <p class="card-text">{{ price }}</p>
         </div>
     </div>
+    list grid - {{ display }}
     `
 })
 
 
 export class ProductComponent {
+    @Input() public display: Boolean;
     @Input() public srno: number;
     @Input() public name: string;
     @Input() public price: number;

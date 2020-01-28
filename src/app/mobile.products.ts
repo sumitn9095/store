@@ -5,12 +5,13 @@ import { ProductsData } from "./ProductsData";
     selector: "mobiles",
     template: `
         <div *ngFor="let product of products; let i = index;">
-            <product [name]="product.name" [price]="product.price" [srno]="i+1" [prodData]="product" ></product>
+            <product [name]="product.name" [price]="product.price" [srno]="i+1" [prodData]="product" [display]="display"></product>
         </div>
     `
 })
 
 export class MobileProducts {
+    @Input() public display: Boolean;
     @Input() public products : any[];
     constructor(private mobile: ProductsData){
         this.products = this.mobile.getMobiles();

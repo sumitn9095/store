@@ -9,9 +9,10 @@ import { Component } from "@angular/core";
                 <a (click)="showProductCategory = 'tv'">TVs</a>
             </div>
             <div class="col-md-8">
+                <div><a (click)="list_grid_toggle()">ssdsd</a></div>
                 <div [ngSwitch]="showProductCategory">
                     <div *ngSwitchCase = "'mobile'">
-                        <mobiles></mobiles>
+                        <mobiles [display]="cardDisplay"></mobiles>
                     </div>
                     <div *ngSwitchCase = "'tv'">
                         <tv></tv>
@@ -25,5 +26,9 @@ import { Component } from "@angular/core";
 
 export class Store {
     constructor(){}
+    public cardDisplay: Boolean;
 
+    list_grid_toggle(){
+        this.cardDisplay = !this.cardDisplay;
+    }
 }
