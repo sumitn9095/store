@@ -9,7 +9,7 @@ import { Component } from "@angular/core";
                 <a (click)="showProductCategory = 'tv'">TVs</a>
             </div>
             <div class="col-md-8">
-                <div><a (click)="list_grid_toggle()">ssdsd</a></div>
+                <div><a (click)="list_grid_toggle()">List/Grid Toggle</a></div>
                 <div [ngSwitch]="showProductCategory">
                     <div *ngSwitchCase = "'mobile'">
                         <mobiles [display]="cardDisplay"></mobiles>

@@ -7,7 +7,7 @@ import { ProductsData } from './ProductsData';
 import { MobileProducts } from './mobile.products';
 import { ProductComponent } from './product.component';
 import { TvProducts } from './tv.products';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { WishlistComponent } from './wishlist.component';
 
 @NgModule({
   declarations: [
@@ -15,11 +15,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     Store,
     MobileProducts,
     TvProducts,
-    ProductComponent
+    ProductComponent,
+    WishlistComponent
   ],
   imports: [
-    BrowserModule,
-    BrowserAnimationsModule
+    BrowserModule
   ],
   providers: [ProductsData],
   bootstrap: [AppComponent]

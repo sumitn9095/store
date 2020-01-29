@@ -6,11 +6,23 @@ export class ProductsData {
         this.products = [
             {
                 name:"Redmi",
-                price: 12000
+                price: 12000,
+                liked: false
             },
             {
                 name:"Huawei Honor",
-                price: 15000
+                price: 15000,
+                liked: false
+            },
+            {
+                name:"samsung galaxy",
+                price: 22000,
+                liked: false
+            },
+            {
+                name:"LG plus",
+                price: 8000,
+                liked: false
             }
         ];
         return this.products;
