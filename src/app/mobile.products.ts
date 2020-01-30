@@ -4,6 +4,7 @@ import { ProductsData } from "./ProductsData";
 @Component({
     selector: "mobiles",
     template: `
+    <search (searchQuery)="processSearch($event)"></search>
         <wishlist [wishlistData]="this.wishlist"></wishlist>
         <div *ngFor="let product of products; let i = index;">
             <product [name]="product.name" [price]="product.price" [srno]="i+1" [prodData]="product" [allproducts]="products"  [display]="display" (Event)="sqw($event)" (wishlist)="getwishlist($event)" ></product>
@@ -35,6 +36,8 @@ export class MobileProducts {
     @Input() public display: Boolean;
     @Input() public products : any[];
 
+    public resultFromSearch = [];
+
     public wishlistCount : number;
 
     public wishlist : any[] = [];
@@ -42,6 +45,21 @@ export class MobileProducts {
     public productdetails : any[];
     constructor(private mobile: ProductsData){
         this.products = this.mobile.getMobiles();
+    }
+
+
+    processSearch(data){
+        if(data != undefined || data != "") {
+            this.resultFromSearch = this.products.filter(q => q.name.includes(data));
+        }
+        if((data == undefined || data == "") || (this.resultFromSearch == undefined || this.resultFromSearch == null)) {
+            this.products = this.mobile.getMobiles();
+        } else {
+            this.products = this.resultFromSearch;
+        }
+        
+        console.log(this.resultFromSearch);
+        
     }
 
     sqw(data) {

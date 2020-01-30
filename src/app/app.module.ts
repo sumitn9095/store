@@ -8,6 +8,7 @@ import { MobileProducts } from './mobile.products';
 import { ProductComponent } from './product.component';
 import { TvProducts } from './tv.products';
 import { WishlistComponent } from './wishlist.component';
+import { SearchComponent } from './search.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { WishlistComponent } from './wishlist.component';
     MobileProducts,
     TvProducts,
     ProductComponent,
-    WishlistComponent
+    WishlistComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule
