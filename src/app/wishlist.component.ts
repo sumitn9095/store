@@ -4,7 +4,7 @@ import { Component, Input } from "@angular/core";
     selector: "wishlist",
     template: `
         <div>
-            wishlist : {{ this.wishlistData.length }} 
+            <div *ngIf="this.wishlistData" >wishlist Count : {{ this.wishlistData.length }} </div>
             <a data-toggle="modal" data-target="#wishlistmodal" *ngIf="this.wishlistData.length > 0" >Show Wishlist</a>
         </div>
 

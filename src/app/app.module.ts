@@ -6,9 +6,11 @@ import { AppComponent } from './app.component';
 import { ProductsData } from './ProductsData';
 import { MobileProducts } from './mobile.products';
 import { ProductComponent } from './product.component';
+import { ProductDetails } from './product.details';
 import { TvProducts } from './tv.products';
 import { WishlistComponent } from './wishlist.component';
 import { SearchComponent } from './search.component';
+import { SearchWithNgmodel } from './searchWithNgmodel';
 
 @NgModule({
   declarations: [
@@ -17,8 +19,10 @@ import { SearchComponent } from './search.component';
     MobileProducts,
     TvProducts,
     ProductComponent,
+    ProductDetails,
     WishlistComponent,
-    SearchComponent
+    SearchComponent,
+    SearchWithNgmodel,
   ],
   imports: [
     BrowserModule
